@@ -1,12 +1,12 @@
-var socket = io();
-var chatUsername = document.querySelector('#chat-username');
-var chatMessage = document.querySelector('#chat-message');
+const socket = io();
+const chatUsername = document.querySelector('#chat-username');
+const chatMessage = document.querySelector('#chat-message');
 
-socket.on('connect', function() {
+socket.on('connect', () => {
   var chatForm = document.forms.chatForm;
 
   if (chatForm) {
-    chatForm.addEventListener('submit', function(e) {
+    chatForm.addEventListener('submit', (e) => {
       e.preventDefault();
       socket.emit('postMessage',{
         username: chatUsername.value,
@@ -16,7 +16,7 @@ socket.on('connect', function() {
       chatMessage.focus();
     }); //chatform event
 
-    socket.on('updateMessages', function(data) {
+    socket.on('updateMessages', (data) => {
       showMessage(data);
     }); //updateMessages
   } //chatform

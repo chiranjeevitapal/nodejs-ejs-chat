@@ -1,7 +1,7 @@
-$(function() {
+$(() => {
   $.getJSON('api', updateFeedback);
 
-  $('.feedback-form').submit(function(e) {
+  $('.feedback-form').submit((e) => {
     e.preventDefault();
     $.post('api', {
       name: $('#feedback-form-name').val(),
@@ -10,7 +10,7 @@ $(function() {
     }, updateFeedback);
   });
 
-  $('.feedback-messages').on('click', function(e) {
+  $('.feedback-messages').on('click', (e) => {
       if (e.target.className == 'glyphicon glyphicon-remove') {
         $.ajax({
           url: 'api/' + e.target.id,

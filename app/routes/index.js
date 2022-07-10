@@ -1,12 +1,12 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
-router.get('/', function(req, res) {
-  var data = req.app.get('appData');
-  var pagePhotos = [];
-  var pageSpeakers = data.speakers;
+router.get('/', (req, res) => {
+  const data = req.app.get('appData');
+  let pagePhotos = [];
+  const pageSpeakers = data.speakers;
 
-  data.speakers.forEach(function(item) {
+  data.speakers.forEach((item) => {
     pagePhotos = pagePhotos.concat(item.artwork);
   });
 

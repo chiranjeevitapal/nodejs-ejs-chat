@@ -1,13 +1,11 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
-router.get('/feedback', function(req, res) {
-
+router.get('/feedback', (req, res) => {
   res.render('feedback', {
     pageTitle: 'Feedback',
     pageID: 'feedback'
   });
-
 });
 
 module.exports = router;

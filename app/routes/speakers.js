@@ -1,12 +1,12 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
-router.get('/speakers', function(req, res) {
-  var data = req.app.get('appData');
-  var pagePhotos = [];
-  var pageSpeakers = data.speakers;
+router.get('/speakers', (req, res) => {
+  const data = req.app.get('appData');
+  let pagePhotos = [];
+  const pageSpeakers = data.speakers;
 
-  data.speakers.forEach(function(item) {
+  data.speakers.forEach((item) => {
     pagePhotos = pagePhotos.concat(item.artwork);
   });
 
@@ -18,12 +18,12 @@ router.get('/speakers', function(req, res) {
   });
 });
 
-router.get('/speakers/:speakerid', function(req, res) {
-  var data = req.app.get('appData');
-  var pagePhotos = [];
-  var pageSpeakers = [];
+router.get('/speakers/:speakerid', (req, res) => {
+  const data = req.app.get('appData');
+  let pagePhotos = [];
+  let pageSpeakers = [];
 
-  data.speakers.forEach(function(item) {
+  data.speakers.forEach((item) => {
     if (item.shortname == req.params.speakerid) {
       pageSpeakers.push(item);
       pagePhotos = pagePhotos.concat(item.artwork);
