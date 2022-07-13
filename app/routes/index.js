@@ -1,22 +1,24 @@
 const express = require('express');
 const router = express.Router();
+const axios = require("axios");
 
 router.get('/', (req, res) => {
-  const data = req.app.get('appData');
-  let pagePhotos = [];
-  const pageSpeakers = data.speakers;
-
-  data.speakers.forEach((item) => {
-    pagePhotos = pagePhotos.concat(item.artwork);
-  });
-
-  res.render('index', {
-    pageTitle: 'Home',
-    artwork: pagePhotos,
-    speakers: pageSpeakers,
-    pageID: 'home'
-  });
-
+    axios.get('https://jsonkeeper.com/b/DYUV')
+        .then(function (response) {
+            // handle success
+            res.render('index', {
+                pageTitle: 'Home',
+                indexData: response.data,
+                pageID: 'home'
+            });
+        })
+        .catch(function (error) {
+            // handle error
+            console.log(error);
+        })
+        .then(function () {
+            // always executed
+        });
 });
 
 module.exports = router;
