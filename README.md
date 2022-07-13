@@ -1,4 +1,4 @@
-# Building a Website with Node.js and Express.js
+# Building a Website with Node.js, Express.js and EJS Templates
 ### Installing
 1. Make sure you have these installed
 	- [node.js](http://nodejs.org/)
