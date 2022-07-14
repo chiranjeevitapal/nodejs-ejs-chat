@@ -6,23 +6,23 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="row card-body">
-                            <div class="col-3">
+                            <div class="col-sm-12 col-md-12 col-lg-3">
                                 <img class="logo-img"
-                                     src="https://source.unsplash.com/random/800x800/?img=<%= Math.floor(Math.random() * 10000)%>"
+                                     src="https://source.unsplash.com/random/800x800/?img=<%= Math.floor(Math.random() * 10)%>"
                                      alt="sans"/>
                             </div>
-                            <div class="col-9">
-                                <div class="row">
-                                    <div class="col-9">
+                            <div class="col-sm-12 col-md-12 col-lg-9">
+                                <div class="row mt-2">
+                                    <div class="col-sm-12 col-md-12 col-lg-9">
                                         <h5 class="card-title"><%= indexData[i].title %></h5>
                                     </div>
-                                    <div class="col-3">
+                                    <div class="col-sm-12 col-md-12 col-lg-3">
                                         <small class="float-end"><%= moment(indexData[i].date).format('DD-MMM-YYYY') %></small>
                                     </div>
                                 </div>
                                 <p class="card-text"><%= indexData[i].company %></p>
                                 <p class="card-text"><%= indexData[i].about %></p>
-                                <a href="#" class="btn btn-primary float-end">Go somewhere</a>
+                                <a href="#" class="btn btn-dark float-end">Read More</a>
                             </div>
                         </div>
                     </div>

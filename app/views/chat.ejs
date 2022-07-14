@@ -1,45 +1,40 @@
 <!DOCTYPE html>
 <html>
-  <head><%- include ('partials/template/head.ejs') -%></head>
-  <body id="<%= pageID %>">
-    <%- include ('partials/template/header.ejs') -%>
-    <div class="container">
-      <div class="row">
+<head><%- include ('partials/template/head.ejs') -%></head>
+<body id="<%= pageID %>">
+<%- include ('partials/template/header.ejs') -%>
+<div class="container">
+    <div class="row">
         <div class="col-sm-12">
-          <article class="chat">
-            <header class="chat-header">
-              <div class="h3 chat-title">Roux Chat
-              </div><!-- chat-title -->
-            </header><!-- chat-header -->
-            <form name="chatForm" class="form-horizontal chat-form">
-              <div class="form-group">
-                <label for="chat-username" class="col-sm-2 control-label">Name</label>
-                <div class="col-sm-10">
-                  <input type="text" class="form-control" id="chat-username" required placeholder="Enter your name">
-                </div><!-- col-sm-10 -->
-              </div><!-- form-group -->
-              <div class="form-group">
-                <label for="chat-message" class="col-sm-2 control-label">Message</label>
-                <div class="col-sm-10">
-                  <div class="input-group">
-                    <input type="text" placeholder="Enter a message, then press enter" class="form-control" id="chat-message" rows="2" autocomplete="off"
-                     required>
-                    <span class="input-group-btn">
-                      <button id="chat-submit" class="btn btn-info" type="submit">Chat</button>
-                    </span>
-                  </div><!-- input-group -->
-                </div><!-- col-sm-10 -->
-              </div><!-- form-group -->
-            </form>
+            <article class="chat">
+                <header class="chat-header">
+                    <div class="h3 chat-title">Chat
+                    </div>
+                </header>
+                <form name="chatForm" class="form-horizontal chat-form">
+                    <div class="mb-3">
+                        <label for="chat-username" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="chat-username" aria-describedby="Enter your name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="chat-message" class="form-label">Message</label>
+                        <textarea class="form-control" id="chat-message" rows="6"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-dark float-end">Send</button>
+                </form>
+            </article>
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col-sm-12">
             <div class="panel panel-default">
-              <div class="panel-body chat-display">
-                <p class="text-muted chat-text">Welcome...add your message using the form above</p>
-              </div><!-- panel-body -->
-            </div><!-- panel-default -->
-          </article><!-- article -->
-        </div><!-- col-sm-12 -->
-      </div><!-- row -->
-    </div><!-- container -->
-    <%- include ('partials/template/jsdefaults.ejs') -%>
-  </body>
+                <div class="panel-body chat-display">
+                    <p class="text-muted chat-text"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!-- container -->
+<%- include ('partials/template/jsdefaults.ejs') -%>
+</body>
 </html>
