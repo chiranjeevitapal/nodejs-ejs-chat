@@ -11,19 +11,18 @@ app.set('appData', dataFile);
 app.set('view engine', 'ejs');
 app.set('views', 'app/views');
 
-app.locals.siteTitle = 'Node CMS';
-app.locals.allSpeakers = dataFile.speakers;
-
 app.use(express.static('app/public'));
 app.use(express.static('node_modules'));
 app.use((req, res, next)=>{
   res.locals.moment = moment;
   next();
 });
-app.use(require('./routes/index'));
-app.use(require('./routes/feedback'));
-app.use(require('./routes/api'));
-app.use(require('./routes/chat'));
+
+// Routes
+app.use(require('./routes/home/home-controller'));
+app.use(require('./routes/feedback/feedback-controller'));
+app.use(require('./routes/api/api-controller'));
+app.use(require('./routes/chat/chat-controller'));
 
 let server = app.listen(app.get('port'), () => {
   console.log('Listening on port ' + app.get('port'));

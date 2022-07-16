@@ -2,11 +2,11 @@
 <html>
 <head><%- include ('partials/template/head.ejs') -%></head>
 <body id="<%= pageID %>">
-<%- include ('partials/template/header.ejs') -%>
-<div class="container">
+<%- include ('partials/template/navigation.ejs') -%>
+<div class="container top-margin-main-content">
     <div class="row">
         <div class="col-sm-8">
-            <%- include ('partials/content/home_page.ejs') -%>
+            <%- include ('partials/content/home.ejs') -%>
         </div><!-- primary -->
         <aside class="col-sm-4">
             <%- include ('partials/content/right_content_1.ejs') -%>
@@ -14,6 +14,6 @@
         </aside><!-- secondary -->
     </div>
 </div><!-- container -->
-<%- include ('partials/template/jsdefaults.ejs') -%>
+<%- include ('partials/template/commons.ejs') -%>
 </body>
 </html>

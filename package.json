@@ -2,7 +2,7 @@
   "name": "expressjs",
   "version": "1.0.0",
   "description": "Files for my Building a Website with Node & ExpressJS course on Lynda.com",
-  "main": "app/app.js",
+  "main": "app/server.js",
   "scripts": {
     "start": "nodemon -e css,ejs,js,json --watch app --ignore feedback.json"
   },
