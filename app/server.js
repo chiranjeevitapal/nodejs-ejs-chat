@@ -1,13 +1,11 @@
 const express = require('express');
 const app = express();
-const dataFile = require('./data/data.json');
 const moment = require("moment");
 const io = require("socket.io")({
   allowEIO3: true // false by default
 });
 
 app.set('port', process.env.PORT || 3000 );
-app.set('appData', dataFile);
 app.set('view engine', 'ejs');
 app.set('views', 'app/views');
 
