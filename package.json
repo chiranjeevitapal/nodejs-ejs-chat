@@ -1,12 +1,12 @@
 {
-  "name": "expressjs",
+  "name": "nodejs-ejs-cms",
   "version": "1.0.0",
-  "description": "Files for my Building a Website with Node & ExpressJS course on Lynda.com",
+  "description": "SEO friendly Nodejs-ExpressJs-EJS-Bootstrap website",
   "main": "app/server.js",
   "scripts": {
     "start": "nodemon -e css,ejs,js,json --watch app --ignore feedback.json"
   },
-  "author": "Ray Villalobos",
+  "author": "Chiranjeevi Tapal",
   "license": "MIT",
   "dependencies": {
     "axios": "^0.27.2",
