@@ -16,7 +16,7 @@ app.use((req, res, next)=>{
   next();
 });
 
-// Routes
+// ROUTES
 app.use(require('./routes/home/home-controller'));
 app.use(require('./routes/feedback/feedback-controller'));
 app.use(require('./routes/api/api-controller'));
