@@ -8,7 +8,7 @@
                             <div class="col-sm-12 col-md-12 col-lg-3">
                                 <img class="logo-img"
                                      src="https://source.unsplash.com/random/800x800/?img=<%= Math.floor(Math.random() * 10)%>"
-                                     alt="sans"/>
+                                     alt="<%= indexData[i].company %>"/>
                             </div>
                             <div class="col-sm-12 col-md-12 col-lg-9">
                                 <div class="row mt-2">
@@ -19,7 +19,7 @@
                                         <small class="float-end"><%= moment(indexData[i].date).format('DD-MMM-YYYY') %></small>
                                     </div>
                                 </div>
-                                <p class="card-text"><%= indexData[i].company %></p>
+                                <h2 class="card-text"><small><%= indexData[i].company %></small></h2>
                                 <p class="card-text"><%= indexData[i].about %></p>
                                 <a href="#" class="btn btn-dark float-end">Read More</a>
                             </div>
