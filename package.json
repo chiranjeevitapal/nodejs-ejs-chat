@@ -1,12 +1,12 @@
 {
-  "name": "nodejs-ejs-cms",
+  "name": "Pink Blue Chat",
   "version": "1.0.0",
-  "description": "SEO friendly Nodejs-ExpressJs-EJS-Bootstrap website",
-  "main": "app/server.js",
+  "description": "Pink Blue Chat",
+  "main": "app/chat-server.js",
   "scripts": {
-    "start": "nodemon -e css,ejs,js,json --watch app --ignore feedback.json"
+    "start": "nodemon -e css,ejs,js,json --watch app"
   },
-  "author": "Chiranjeevi Tapal",
+  "author": "CTP",
   "license": "MIT",
   "dependencies": {
     "axios": "^0.27.2",

@@ -1,3 +1,18 @@
 .top-margin-main-content {
     margin-top: 4rem;
 }
+
+.scrollable-chat-section {
+    height: 500px;
+    min-height: 500px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.chat-message {
+    font-family: 'Roboto';font-size: 20px;
+}
+
+.pink-badge {
+    background-color: hotpink;
+}
