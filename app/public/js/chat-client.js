@@ -1,6 +1,6 @@
 const socket = io();
 const chatUsername = document.querySelector('#username');
-const userGender = document.querySelector('#gender');
+let userGender;
 let privateRoom = '';
 let user = {};
 
@@ -9,15 +9,20 @@ socket.on('connect', () => {
     if (chatForm) {
         chatForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            if (!chatUsername.value || !userGender.value) {
+            if( $('#gender-m').is(':checked') ){
+                userGender = 'm';
+            }
+            else{
+                userGender = 'f';
+            }
+            if (!chatUsername.value || !userGender) {
                 showMessage('All fields are required', true);
                 return;
             }
-            console.log(socket.id);
             user = {
                 id: socket.id,
                 username: chatUsername.value,
-                gender: userGender.value,
+                gender: userGender,
                 isAvailable: true
             }
             socket.emit('user-joined', user);
@@ -32,8 +37,8 @@ socket.on('connect', () => {
             showMessage(message, false);
             socket.emit('find-a-match', user);
         });
-        socket.on('start-private-chat', (room) => {
-            startPrivateChat(room);
+        socket.on('start-private-chat', (currentUser, matchUser, room) => {
+            startPrivateChat(currentUser, matchUser, room);
         });
         socket.on('server-message', (user, message, socketId) => {
             addMessageToUI(user, socketId, message);
@@ -41,11 +46,20 @@ socket.on('connect', () => {
     } //chatform
 }); //socket
 
-function startPrivateChat(room) {
-    console.log(room);
+function startPrivateChat(_currentUser, _matchUser, room) {
     privateRoom = room;
+    let matchUser = _matchUser;
+    if(chatUsername.value !== _currentUser.username) {
+        matchUser = _currentUser;
+    }
     document.getElementById('pre-chat-section').style.display = "none";
     document.getElementById('chat-section').style.display = "block";
+    if(matchUser.gender === 'f') {
+        document.getElementById('match-name').innerHTML = `You are chatting with <span class="bolder-pink-font mx-2"><i class="fa fa-venus"></i> ${matchUser.username}</span>`;
+    } else {
+        document.getElementById('match-name').innerHTML = `You are chatting with <span class="bolder-blue-font mx-2"><i class="fa fa-mars"></i> ${matchUser.username}</span>`;
+    }
+
 }
 
 function showMessage(message, isError) {

@@ -5,24 +5,26 @@
 <%- include ('partials/template/top-navigation.ejs') -%>
 <div class="container top-margin-main-content" id="chat-section" style="display: none">
     <div class="row mt-2">
+        <span id="match-name"></span>
         <div class="col-8">
-            <textarea class="form-control" id="chat-box" rows="3" placeholder="Start typing..."></textarea>
-            <button type="submit" class="btn btn-dark float-end mt-2" onclick="sendMessage()">Send</button>
-        </div>
-    </div>
-    <div class="row mt-2">
-        <div class="col-8">
-            <div class="card">
-                <div id="private-messages" class="card-body scrollable-chat-section">
-
+            <div class="card border-3">
+                <div id="private-messages" class="card-body bg-light scrollable-chat-section">
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="row mt-1">
+        <div class="col-8">
+            <textarea class="form-control" id="chat-box" rows="3" placeholder="Start typing..."></textarea>
+            <button type="submit" class="btn btn-dark float-end mt-2" onclick="sendMessage()">Send <i class="fa fa-paper-plane"></i></button>
         </div>
     </div>
 </div>
 <div class="container top-margin-main-content" id="pre-chat-section">
     <div class="row">
-        <div class="col-6"><span class="badge bg-info text-dark" id="online-users"></span></div>
+        <div class="col-3"></div>
+        <div class="col-6"><span class="badge bg-warning text-dark" id="online-users"></span></div>
+        <div class="col-3"></div>
     </div>
     <div class="row mt-2" id="message-row" style="display: none">
         <div class="col-6 alert alert-primary" id="info-message" role="alert" style="display: none">
@@ -36,26 +38,29 @@
         </div>
     </div>
     <div class="row mt-2" id="form-row">
+        <div class="col-3"></div>
         <div class="col-6">
             <form name="chatForm" class="form-horizontal chat-form">
                 <div class="mb-3">
-                    <label for="username" class="form-label">Name</label>
+                    <label for="username" class="form-label"><b>Name</b></label>
                     <input type="text" class="form-control" id="username" aria-describedby="name">
                 </div>
                 <div class="mb-3">
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="gender" value="m"
-                               checked>
-                        <label class="form-check-label">Male</label>
+                        <input class="form-check-input" type="radio" name="gender" id="gender-m"
+                               value="m" checked>
+                        <label class="form-check-label bolder-blue-font" for="gender-m">Male</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="gender" value="f">
-                        <label class="form-check-label">Female</label>
+                        <input class="form-check-input" type="radio" name="gender" id="gender-f"
+                               value="f">
+                        <label class="form-check-label bolder-pink-font" for="gender-f">Female</label>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-dark float-end">Join</button>
+                <button type="submit" class="btn btn-dark float-end">Continue</button>
             </form>
         </div>
+        <div class="col-3"></div>
     </div>
 </div><!-- container -->
 <%- include ('partials/template/commons.ejs') -%>

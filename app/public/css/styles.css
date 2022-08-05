@@ -1,5 +1,5 @@
 .top-margin-main-content {
-    margin-top: 4rem;
+    margin-top: 6rem;
 }
 
 .scrollable-chat-section {
@@ -13,6 +13,33 @@
     font-family: 'Roboto';font-size: 20px;
 }
 
+.nav-gradient-background {
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+}
+
 .pink-badge {
     background-color: hotpink;
+}
+
+.blue-badge {
+    background-color: dodgerblue;
+}
+
+.bolder-pink-font {
+    color: hotpink;
+    font-weight: bolder;
+}
+
+.bolder-blue-font {
+    color: dodgerblue;
+    font-weight: bolder;
+}
+
+.logged-in {
+    color: green;
+}
+
+.logged-out {
+    color: red;
 }

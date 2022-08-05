@@ -23,6 +23,8 @@ let chatServer = app.listen(app.get('port'), () => {
     console.log('Listening on port ' + app.get('port'));
 });
 
+/** ############################################################################################################### **/
+
 // CHAT SERVER
 const onlineUsers = [];
 const sockets = [];
@@ -49,7 +51,7 @@ io.on('connection', (socket) => {
             const room = `privateRoom ${currentUser.id} And ${matchUser.id}`;
             socket.join(room);
             sockets[matchUserSocketId].join(room);
-            io.sockets.in(room).emit('start-private-chat', room);
+            io.sockets.in(room).emit('start-private-chat', currentUser, matchUser, room);
         }
     });
     socket.on('client-message', (user, room, message) => {
